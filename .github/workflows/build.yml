@@ -11,11 +11,10 @@ jobs:
           version: 8
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
       - run: pnpm install
-      - run: pnpm build
-      - name: Upload dist
-        uses: actions/upload-artifact@v4
+      - run: pnpm build-only
+      - uses: actions/upload-artifact@v4
         with:
           name: lightcone-dist
           path: dist/
